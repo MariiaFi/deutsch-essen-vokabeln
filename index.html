@@ -1,32 +1,32 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deutsch Vokabeln Spiel: Essen</title>
+    <title>Немецкие слова: Еда</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1><i class="fas fa-apple-alt"></i> Deutsche Vokabeln: Essen</h1>
-            <p class="subtitle">Lerne deutsche Wörter zum Thema "Essen", dann teste dein Wissen!</p>
-            <div class="level-badge">A1-A2 Niveau</div>
+            <h1><i class="fas fa-apple-alt"></i> Немецкие слова: Еда</h1>
+            <p class="subtitle">Изучай немецкие слова по теме "Еда", затем проверь свои знания!</p>
+            <div class="level-badge">Уровень A1-A2</div>
         </header>
 
         <main>
-            <!-- Vokabelbildschirm -->
+            <!-- Экран с лексикой -->
             <div id="vocabulary-screen" class="screen active">
-                <h2><i class="fas fa-book-open"></i> Vokabeln lernen</h2>
-                <p class="screen-description">Lerne diese deutschen Wörter zum Thema "Essen". Wenn du bereit bist, starte den Test!</p>
+                <h2><i class="fas fa-book-open"></i> Изучай слова</h2>
+                <p class="screen-description">Изучи эти немецкие слова по теме "Еда". Когда будешь готов, начни тест!</p>
                 
                 <div class="categories-container">
                     <div class="category">
-                        <h3><i class="fas fa-bread-slice"></i> Grundnahrungsmittel</h3>
+                        <h3><i class="fas fa-bread-slice"></i> Основные продукты</h3>
                         <div class="words-grid">
                             <div class="word-card">Brot<span class="translation">хлеб</span></div>
                             <div class="word-card">Reis<span class="translation">рис</span></div>
@@ -40,7 +40,7 @@
                     </div>
                     
                     <div class="category">
-                        <h3><i class="fas fa-lemon"></i> Obst</h3>
+                        <h3><i class="fas fa-lemon"></i> Фрукты</h3>
                         <div class="words-grid">
                             <div class="word-card">Apfel<span class="translation">яблоко</span></div>
                             <div class="word-card">Banane<span class="translation">банан</span></div>
@@ -53,7 +53,7 @@
                     </div>
                     
                     <div class="category">
-                        <h3><i class="fas fa-carrot"></i> Gemüse</h3>
+                        <h3><i class="fas fa-carrot"></i> Овощи</h3>
                         <div class="words-grid">
                             <div class="word-card">Karotte<span class="translation">морковь</span></div>
                             <div class="word-card">Tomate<span class="translation">помидор</span></div>
@@ -66,7 +66,7 @@
                     </div>
                     
                     <div class="category">
-                        <h3><i class="fas fa-ice-cream"></i> Süßigkeiten & Getränke</h3>
+                        <h3><i class="fas fa-ice-cream"></i> Сладости и напитки</h3>
                         <div class="words-grid">
                             <div class="word-card">Kuchen<span class="translation">торт</span></div>
                             <div class="word-card">Schokolade<span class="translation">шоколад</span></div>
@@ -81,19 +81,19 @@
                 
                 <div class="actions">
                     <button id="start-quiz-btn" class="btn-primary">
-                        <i class="fas fa-play-circle"></i> Test starten
+                        <i class="fas fa-play-circle"></i> Начать тест
                     </button>
                 </div>
             </div>
 
-            <!-- Testbildschirm -->
+            <!-- Экран теста -->
             <div id="quiz-screen" class="screen">
                 <div class="quiz-header">
                     <div class="score-display">
-                        <i class="fas fa-star"></i> Punkte: <span id="score">0</span>/30
+                        <i class="fas fa-star"></i> Счёт: <span id="score">0</span>/30
                     </div>
                     <div class="progress-display">
-                        <i class="fas fa-list-ol"></i> Frage <span id="current-question">1</span>/30
+                        <i class="fas fa-list-ol"></i> Вопрос <span id="current-question">1</span>/30
                     </div>
                 </div>
                 
@@ -105,20 +105,20 @@
                     <h2 id="question-text"></h2>
                     
                     <div id="options-container" class="options-container">
-                        <!-- Optionen werden von JavaScript hinzugefügt -->
+                        <!-- Варианты ответов будут добавлены JavaScript -->
                     </div>
                 </div>
                 
                 <div class="quiz-controls">
                     <button id="next-question-btn" class="btn-secondary" disabled>
-                        <i class="fas fa-arrow-right"></i> Nächste Frage
+                        <i class="fas fa-arrow-right"></i> Следующий вопрос
                     </button>
                 </div>
             </div>
 
-            <!-- Ergebnisbildschirm -->
+            <!-- Экран результатов -->
             <div id="results-screen" class="screen">
-                <h2><i class="fas fa-medal"></i> Test abgeschlossen!</h2>
+                <h2><i class="fas fa-medal"></i> Тест завершён!</h2>
                 
                 <div id="results-content">
                     <div class="score-circle">
@@ -127,32 +127,32 @@
                             <circle id="score-circle" cx="60" cy="60" r="54" fill="none" stroke="#4CAF50" stroke-width="12" stroke-linecap="round" transform="rotate(-90 60 60)" stroke-dasharray="339.292" stroke-dashoffset="339.292"></circle>
                             <text x="60" y="65" text-anchor="middle" font-size="24" font-weight="bold" fill="#333" id="circle-score-text">0</text>
                         </svg>
-                        <div class="score-label">Dein Ergebnis</div>
+                        <div class="score-label">Ваш результат</div>
                     </div>
                     
                     <div id="results-message"></div>
                     
                     <div class="results-details">
-                        <p><i class="fas fa-check-circle"></i> Richtig: <span id="correct-count">0</span></p>
-                        <p><i class="fas fa-times-circle"></i> Falsch: <span id="incorrect-count">0</span></p>
-                        <p><i class="fas fa-percentage"></i> Prozent: <span id="percentage">0</span>%</p>
+                        <p><i class="fas fa-check-circle"></i> Правильно: <span id="correct-count">0</span></p>
+                        <p><i class="fas fa-times-circle"></i> Неправильно: <span id="incorrect-count">0</span></p>
+                        <p><i class="fas fa-percentage"></i> Процент: <span id="percentage">0</span>%</p>
                     </div>
                 </div>
                 
                 <div class="actions">
                     <button id="restart-quiz-btn" class="btn-primary">
-                        <i class="fas fa-redo"></i> Nochmal spielen
+                        <i class="fas fa-redo"></i> Пройти ещё раз
                     </button>
                     <button id="back-to-vocab-btn" class="btn-secondary">
-                        <i class="fas fa-book"></i> Zurück zu Vokabeln
+                        <i class="fas fa-book"></i> Вернуться к словам
                     </button>
                 </div>
             </div>
         </main>
         
         <footer>
-            <p>Entwickelt für Deutschlernende (A1-A2 Niveau).</p>
-            <p class="hint"><i class="fas fa-lightbulb"></i> Tipp: Lerne zuerst die Vokabeln, dann mache den Test!</p>
+            <p>Разработано для начинающих изучать немецкий язык (уровень A1-A2).</p>
+            <p class="hint"><i class="fas fa-lightbulb"></i> Совет: сначала изучите слова, затем пройдите тест!</p>
         </footer>
     </div>
 
