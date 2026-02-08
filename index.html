@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deutsch Vokabeln Spiel: Essen</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-apple-alt"></i> Deutsche Vokabeln: Essen</h1>
+            <p class="subtitle">Lerne deutsche Wörter zum Thema "Essen", dann teste dein Wissen!</p>
+            <div class="level-badge">A1-A2 Niveau</div>
+        </header>
+
+        <main>
+            <!-- Vokabelbildschirm -->
+            <div id="vocabulary-screen" class="screen active">
+                <h2><i class="fas fa-book-open"></i> Vokabeln lernen</h2>
+                <p class="screen-description">Lerne diese deutschen Wörter zum Thema "Essen". Wenn du bereit bist, starte den Test!</p>
+                
+                <div class="categories-container">
+                    <div class="category">
+                        <h3><i class="fas fa-bread-slice"></i> Grundnahrungsmittel</h3>
+                        <div class="words-grid">
+                            <div class="word-card">Brot<span class="translation">хлеб</span></div>
+                            <div class="word-card">Reis<span class="translation">рис</span></div>
+                            <div class="word-card">Nudeln<span class="translation">макароны</span></div>
+                            <div class="word-card">Käse<span class="translation">сыр</span></div>
+                            <div class="word-card">Ei<span class="translation">яйцо</span></div>
+                            <div class="word-card">Fleisch<span class="translation">мясо</span></div>
+                            <div class="word-card">Fisch<span class="translation">рыба</span></div>
+                            <div class="word-card">Suppe<span class="translation">суп</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="category">
+                        <h3><i class="fas fa-lemon"></i> Obst</h3>
+                        <div class="words-grid">
+                            <div class="word-card">Apfel<span class="translation">яблоко</span></div>
+                            <div class="word-card">Banane<span class="translation">банан</span></div>
+                            <div class="word-card">Orange<span class="translation">апельсин</span></div>
+                            <div class="word-card">Erdbeere<span class="translation">клубника</span></div>
+                            <div class="word-card">Traube<span class="translation">виноград</span></div>
+                            <div class="word-card">Wassermelone<span class="translation">арбуз</span></div>
+                            <div class="word-card">Ananas<span class="translation">ананас</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="category">
+                        <h3><i class="fas fa-carrot"></i> Gemüse</h3>
+                        <div class="words-grid">
+                            <div class="word-card">Karotte<span class="translation">морковь</span></div>
+                            <div class="word-card">Tomate<span class="translation">помидор</span></div>
+                            <div class="word-card">Kartoffel<span class="translation">картофель</span></div>
+                            <div class="word-card">Zwiebel<span class="translation">лук</span></div>
+                            <div class="word-card">Salat<span class="translation">салат</span></div>
+                            <div class="word-card">Brokkoli<span class="translation">брокколи</span></div>
+                            <div class="word-card">Pilz<span class="translation">гриб</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="category">
+                        <h3><i class="fas fa-ice-cream"></i> Süßigkeiten & Getränke</h3>
+                        <div class="words-grid">
+                            <div class="word-card">Kuchen<span class="translation">торт</span></div>
+                            <div class="word-card">Schokolade<span class="translation">шоколад</span></div>
+                            <div class="word-card">Eis<span class="translation">мороженое</span></div>
+                            <div class="word-card">Saft<span class="translation">сок</span></div>
+                            <div class="word-card">Kaffee<span class="translation">кофе</span></div>
+                            <div class="word-card">Tee<span class="translation">чай</span></div>
+                            <div class="word-card">Wasser<span class="translation">вода</span></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="actions">
+                    <button id="start-quiz-btn" class="btn-primary">
+                        <i class="fas fa-play-circle"></i> Test starten
+                    </button>
+                </div>
+            </div>
+
+            <!-- Testbildschirm -->
+            <div id="quiz-screen" class="screen">
+                <div class="quiz-header">
+                    <div class="score-display">
+                        <i class="fas fa-star"></i> Punkte: <span id="score">0</span>/30
+                    </div>
+                    <div class="progress-display">
+                        <i class="fas fa-list-ol"></i> Frage <span id="current-question">1</span>/30
+                    </div>
+                </div>
+                
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill"></div>
+                </div>
+                
+                <div id="question-container">
+                    <h2 id="question-text"></h2>
+                    
+                    <div id="options-container" class="options-container">
+                        <!-- Optionen werden von JavaScript hinzugefügt -->
+                    </div>
+                </div>
+                
+                <div class="quiz-controls">
+                    <button id="next-question-btn" class="btn-secondary" disabled>
+                        <i class="fas fa-arrow-right"></i> Nächste Frage
+                    </button>
+                </div>
+            </div>
+
+            <!-- Ergebnisbildschirm -->
+            <div id="results-screen" class="screen">
+                <h2><i class="fas fa-medal"></i> Test abgeschlossen!</h2>
+                
+                <div id="results-content">
+                    <div class="score-circle">
+                        <svg width="120" height="120" viewBox="0 0 120 120">
+                            <circle cx="60" cy="60" r="54" fill="none" stroke="#e0e0e0" stroke-width="12"></circle>
+                            <circle id="score-circle" cx="60" cy="60" r="54" fill="none" stroke="#4CAF50" stroke-width="12" stroke-linecap="round" transform="rotate(-90 60 60)" stroke-dasharray="339.292" stroke-dashoffset="339.292"></circle>
+                            <text x="60" y="65" text-anchor="middle" font-size="24" font-weight="bold" fill="#333" id="circle-score-text">0</text>
+                        </svg>
+                        <div class="score-label">Dein Ergebnis</div>
+                    </div>
+                    
+                    <div id="results-message"></div>
+                    
+                    <div class="results-details">
+                        <p><i class="fas fa-check-circle"></i> Richtig: <span id="correct-count">0</span></p>
+                        <p><i class="fas fa-times-circle"></i> Falsch: <span id="incorrect-count">0</span></p>
+                        <p><i class="fas fa-percentage"></i> Prozent: <span id="percentage">0</span>%</p>
+                    </div>
+                </div>
+                
+                <div class="actions">
+                    <button id="restart-quiz-btn" class="btn-primary">
+                        <i class="fas fa-redo"></i> Nochmal spielen
+                    </button>
+                    <button id="back-to-vocab-btn" class="btn-secondary">
+                        <i class="fas fa-book"></i> Zurück zu Vokabeln
+                    </button>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Entwickelt für Deutschlernende (A1-A2 Niveau).</p>
+            <p class="hint"><i class="fas fa-lightbulb"></i> Tipp: Lerne zuerst die Vokabeln, dann mache den Test!</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
