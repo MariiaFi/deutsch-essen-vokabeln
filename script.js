@@ -1,203 +1,203 @@
-// Vokabeldaten
+// Данные лексики
 const vocabulary = {
-    grundnahrungsmittel: ['Brot', 'Reis', 'Nudeln', 'Käse', 'Ei', 'Fleisch', 'Fisch', 'Suppe'],
-    obst: ['Apfel', 'Banane', 'Orange', 'Erdbeere', 'Traube', 'Wassermelone', 'Ananas'],
-    gemüse: ['Karotte', 'Tomate', 'Kartoffel', 'Zwiebel', 'Salat', 'Brokkoli', 'Pilz'],
-    süßigkeitenGetränke: ['Kuchen', 'Schokolade', 'Eis', 'Saft', 'Kaffee', 'Tee', 'Wasser']
+    basicFoods: ['Brot', 'Reis', 'Nudeln', 'Käse', 'Ei', 'Fleisch', 'Fisch', 'Suppe'],
+    fruits: ['Apfel', 'Banane', 'Orange', 'Erdbeere', 'Traube', 'Wassermelone', 'Ananas'],
+    vegetables: ['Karotte', 'Tomate', 'Kartoffel', 'Zwiebel', 'Salat', 'Brokkoli', 'Pilz'],
+    sweetsDrinks: ['Kuchen', 'Schokolade', 'Eis', 'Saft', 'Kaffee', 'Tee', 'Wasser']
 };
 
-// Testfragen
+// Вопросы для теста
 const quizQuestions = [
-    // Kategorie 1: Wähle die richtige Übersetzung
+    // Категория 1: Выбери правильный перевод
     {
-        question: "Wie sagt man 'хлеб' auf Deutsch?",
+        question: "Как будет 'хлеб' на немецком?",
         options: ["Brot", "Reis", "Käse", "Fleisch"],
         correctIndex: 0,
         type: "choose"
     },
     {
-        question: "Wie sagt man 'яблоко' auf Deutsch?",
+        question: "Как будет 'яблоко' на немецком?",
         options: ["Banane", "Orange", "Apfel", "Erdbeere"],
         correctIndex: 2,
         type: "choose"
     },
     {
-        question: "Wie sagt man 'сыр' auf Deutsch?",
+        question: "Как будет 'сыр' на немецком?",
         options: ["Ei", "Fleisch", "Käse", "Fisch"],
         correctIndex: 2,
         type: "choose"
     },
     {
-        question: "Wie sagt man 'вода' auf Deutsch?",
+        question: "Как будет 'вода' на немецком?",
         options: ["Saft", "Kaffee", "Tee", "Wasser"],
         correctIndex: 3,
         type: "choose"
     },
     {
-        question: "Wie sagt man 'кофе' auf Deutsch?",
+        question: "Как будет 'кофе' на немецком?",
         options: ["Tee", "Saft", "Kaffee", "Wasser"],
         correctIndex: 2,
         type: "choose"
     },
     {
-        question: "Wie sagt man 'мясо' auf Deutsch?",
+        question: "Как будет 'мясо' на немецком?",
         options: ["Fisch", "Ei", "Fleisch", "Käse"],
         correctIndex: 2,
         type: "choose"
     },
     {
-        question: "Wie sagt man 'чай' auf Deutsch?",
+        question: "Как будет 'чай' на немецком?",
         options: ["Kaffee", "Tee", "Saft", "Wasser"],
         correctIndex: 1,
         type: "choose"
     },
     {
-        question: "Wie sagt man 'торт' auf Deutsch?",
+        question: "Как будет 'торт' на немецком?",
         options: ["Schokolade", "Eis", "Kuchen", "Kekse"],
         correctIndex: 2,
         type: "choose"
     },
     
-    // Kategorie 2: Was ist das für ein Wort?
+    // Категория 2: Что это за слово?
     {
-        question: "Apfel - was ist das?",
-        options: ["Gemüse", "Obst", "Getränk", "Fleisch"],
+        question: "Apfel - что это такое?",
+        options: ["Овощ", "Фрукт", "Напиток", "Мясо"],
         correctIndex: 1,
         type: "category"
     },
     {
-        question: "Karotte - was ist das?",
-        options: ["Obst", "Gemüse", "Süßigkeit", "Getränk"],
+        question: "Karotte - что это такое?",
+        options: ["Фрукт", "Овощ", "Сладость", "Напиток"],
         correctIndex: 1,
         type: "category"
     },
     {
-        question: "Schokolade - was ist das?",
-        options: ["Gemüse", "Obst", "Süßigkeit", "Getränk"],
+        question: "Schokolade - что это такое?",
+        options: ["Овощ", "Фрукт", "Сладость", "Напиток"],
         correctIndex: 2,
         type: "category"
     },
     {
-        question: "Kaffee - was ist das?",
-        options: ["Essen", "Obst", "Gemüse", "Getränk"],
+        question: "Kaffee - что это такое?",
+        options: ["Еда", "Фрукт", "Овощ", "Напиток"],
         correctIndex: 3,
         type: "category"
     },
     {
-        question: "Fisch - was ist das?",
-        options: ["Gemüse", "Obst", "Fleisch/Fisch", "Getränk"],
+        question: "Fisch - что это такое?",
+        options: ["Овощ", "Фрукт", "Мясо/рыба", "Напиток"],
         correctIndex: 2,
         type: "category"
     },
     {
-        question: "Kuchen - was ist das?",
-        options: ["Grundnahrungsmittel", "Gemüse", "Süßigkeit", "Getränk"],
+        question: "Kuchen - что это такое?",
+        options: ["Основная еда", "Овощ", "Сладость", "Напиток"],
         correctIndex: 2,
         type: "category"
     },
     {
-        question: "Tee - was ist das?",
-        options: ["Essen", "Obst", "Gemüse", "Getränk"],
+        question: "Tee - что это такое?",
+        options: ["Еда", "Фрукт", "Овощ", "Напиток"],
         correctIndex: 3,
         type: "category"
     },
     
-    // Kategorie 3: Wähle das falsche Wort
+    // Категория 3: Выбери лишнее
     {
-        question: "Welches Wort passt nicht?",
+        question: "Какое слово лишнее?",
         options: ["Apfel", "Banane", "Karotte", "Orange"],
         correctIndex: 2,
         type: "category"
     },
     {
-        question: "Welches Wort passt nicht?",
+        question: "Какое слово лишнее?",
         options: ["Kaffee", "Tee", "Saft", "Käse"],
         correctIndex: 3,
         type: "category"
     },
     {
-        question: "Welches Wort passt nicht?",
+        question: "Какое слово лишнее?",
         options: ["Brot", "Reis", "Nudeln", "Wassermelone"],
         correctIndex: 3,
         type: "category"
     },
     {
-        question: "Welches Wort passt nicht?",
+        question: "Какое слово лишнее?",
         options: ["Karotte", "Tomate", "Kartoffel", "Schokolade"],
         correctIndex: 3,
         type: "category"
     },
     {
-        question: "Welches Wort passt nicht?",
+        question: "Какое слово лишнее?",
         options: ["Kuchen", "Eis", "Schokolade", "Fleisch"],
         correctIndex: 3,
         type: "category"
     },
     
-    // Kategorie 4: Einfache Situationen
+    // Категория 4: Простые ситуации
     {
-        question: "Was isst du zum Frühstück?",
+        question: "Что ты ешь на завтрак?",
         options: ["Brot", "Suppe", "Kuchen", "Eis"],
         correctIndex: 0,
         type: "situation"
     },
     {
-        question: "Was trinkst du morgens?",
+        question: "Что ты пьёшь утром?",
         options: ["Kaffee", "Suppe", "Eis", "Fleisch"],
         correctIndex: 0,
         type: "situation"
     },
     {
-        question: "Was ist süß?",
+        question: "Что сладкое?",
         options: ["Schokolade", "Reis", "Fleisch", "Fisch"],
         correctIndex: 0,
         type: "situation"
     },
     {
-        question: "Was wächst auf einem Baum?",
+        question: "Что растёт на дереве?",
         options: ["Apfel", "Karotte", "Kartoffel", "Reis"],
         correctIndex: 0,
         type: "situation"
     },
     {
-        question: "Was isst du im Salat?",
+        question: "Что ты ешь в салате?",
         options: ["Tomate", "Schokolade", "Kuchen", "Kaffee"],
         correctIndex: 0,
         type: "situation"
     },
     {
-        question: "Was ist kalt und süß?",
+        question: "Что холодное и сладкое?",
         options: ["Eis", "Suppe", "Reis", "Brot"],
         correctIndex: 0,
         type: "situation"
     },
     {
-        question: "Welches ist Obst?",
+        question: "Что из этого фрукт?",
         options: ["Banane", "Karotte", "Kartoffel", "Brot"],
         correctIndex: 0,
         type: "situation"
     },
     {
-        question: "Welches ist Gemüse?",
+        question: "Что из этого овощ?",
         options: ["Kartoffel", "Apfel", "Banane", "Orange"],
         correctIndex: 0,
         type: "situation"
     },
     {
-        question: "Was kann man trinken?",
+        question: "Что можно пить?",
         options: ["Wasser", "Brot", "Fleisch", "Käse"],
         correctIndex: 0,
         type: "situation"
     },
     {
-        question: "Was wird aus Milch gemacht?",
+        question: "Что делают из молока?",
         options: ["Käse", "Fleisch", "Fisch", "Brot"],
         correctIndex: 0,
         type: "situation"
     }
 ];
 
-// Spielstatus
+// Состояние игры
 const gameState = {
     currentScreen: 'vocabulary',
     currentQuestionIndex: 0,
@@ -206,7 +206,7 @@ const gameState = {
     quizStarted: false
 };
 
-// DOM Elemente
+// DOM элементы
 const screens = {
     vocabulary: document.getElementById('vocabulary-screen'),
     quiz: document.getElementById('quiz-screen'),
@@ -229,32 +229,32 @@ const percentageDisplay = document.getElementById('percentage');
 const circleScoreText = document.getElementById('circle-score-text');
 const scoreCircle = document.getElementById('score-circle');
 
-// Spiel initialisieren
+// Инициализация игры
 function initGame() {
-    // Event-Listener einrichten
+    // Настройка обработчиков событий
     startQuizBtn.addEventListener('click', startQuiz);
     nextQuestionBtn.addEventListener('click', showNextQuestion);
     restartQuizBtn.addEventListener('click', restartQuiz);
     backToVocabBtn.addEventListener('click', showVocabularyScreen);
     
-    // Startbildschirm anzeigen
+    // Показать начальный экран
     showScreen('vocabulary');
     
-    console.log("Deutsch Vokabelspiel 'Essen' initialisiert!");
+    console.log("Игра 'Немецкие слова: Еда' инициализирована!");
 }
 
-// Bestimmten Bildschirm anzeigen
+// Показать определённый экран
 function showScreen(screenName) {
-    // Alle Bildschirme ausblenden
+    // Скрыть все экраны
     Object.values(screens).forEach(screen => {
         screen.classList.remove('active');
     });
     
-    // Angefragten Bildschirm anzeigen
+    // Показать запрошенный экран
     screens[screenName].classList.add('active');
     gameState.currentScreen = screenName;
     
-    // UI basierend auf Bildschirm aktualisieren
+    // Обновить UI в зависимости от экрана
     if (screenName === 'quiz') {
         updateQuizUI();
     } else if (screenName === 'results') {
@@ -262,27 +262,27 @@ function showScreen(screenName) {
     }
 }
 
-// Test starten
+// Начать тест
 function startQuiz() {
-    // Spielstatus zurücksetzen
+    // Сбросить состояние игры
     gameState.currentQuestionIndex = 0;
     gameState.score = 0;
     gameState.userAnswers = [];
     gameState.quizStarted = true;
     
-    // UI aktualisieren
+    // Обновить UI
     scoreDisplay.textContent = '0';
     currentQuestionDisplay.textContent = '1';
     progressFill.style.width = '0%';
     
-    // Testbildschirm anzeigen
+    // Показать экран теста
     showScreen('quiz');
     
-    // Erste Frage anzeigen
+    // Показать первый вопрос
     displayQuestion();
 }
 
-// Aktuelle Frage anzeigen
+// Показать текущий вопрос
 function displayQuestion() {
     if (gameState.currentQuestionIndex >= quizQuestions.length) {
         showScreen('results');
@@ -291,13 +291,13 @@ function displayQuestion() {
     
     const question = quizQuestions[gameState.currentQuestionIndex];
     
-    // Fragetext aktualisieren
+    // Обновить текст вопроса
     questionText.textContent = question.question;
     
-    // Optionscontainer leeren
+    // Очистить контейнер вариантов
     optionsContainer.innerHTML = '';
     
-    // Optionsbuttons erstellen
+    // Создать кнопки вариантов
     question.options.forEach((option, index) => {
         const button = document.createElement('button');
         button.className = 'option-btn';
@@ -309,34 +309,34 @@ function displayQuestion() {
         optionsContainer.appendChild(button);
     });
     
-    // Fortschritt aktualisieren
+    // Обновить прогресс
     currentQuestionDisplay.textContent = gameState.currentQuestionIndex + 1;
     const progressPercent = (gameState.currentQuestionIndex / quizQuestions.length) * 100;
     progressFill.style.width = `${progressPercent}%`;
     
-    // "Nächste Frage"-Button deaktivieren, bis Antwort gewählt
+    // Отключить кнопку "Следующий" пока не выбран ответ
     nextQuestionBtn.disabled = true;
 }
 
-// Antwortauswahl verarbeiten
+// Обработать выбор ответа
 function selectAnswer(selectedIndex) {
     const question = quizQuestions[gameState.currentQuestionIndex];
     const buttons = document.querySelectorAll('.option-btn');
     const selectedButton = buttons[selectedIndex];
     const correctButton = buttons[question.correctIndex];
     
-    // Alle Buttons deaktivieren
+    // Отключить все кнопки
     buttons.forEach(button => {
         button.disabled = true;
     });
     
-    // Richtige/falsche Antworten markieren
+    // Показать правильные/неправильные ответы
     if (selectedIndex === question.correctIndex) {
         selectedButton.classList.add('correct');
         gameState.score++;
         scoreDisplay.textContent = gameState.score;
         
-        // Puls-Animation zum Punktestand hinzufügen
+        // Добавить анимацию пульсации к счёту
         scoreDisplay.parentElement.classList.add('pulse');
         setTimeout(() => {
             scoreDisplay.parentElement.classList.remove('pulse');
@@ -346,18 +346,18 @@ function selectAnswer(selectedIndex) {
         correctButton.classList.add('correct');
     }
     
-    // Benutzerantwort speichern
+    // Сохранить ответ пользователя
     gameState.userAnswers.push({
         questionIndex: gameState.currentQuestionIndex,
         selectedIndex: selectedIndex,
         isCorrect: selectedIndex === question.correctIndex
     });
     
-    // "Nächste Frage"-Button aktivieren
+    // Включить кнопку "Следующий"
     nextQuestionBtn.disabled = false;
 }
 
-// Nächste Frage anzeigen
+// Показать следующий вопрос
 function showNextQuestion() {
     gameState.currentQuestionIndex++;
     
@@ -368,57 +368,57 @@ function showNextQuestion() {
     }
 }
 
-// Ergebnisbildschirm anzeigen
+// Показать экран результатов
 function showResults() {
-    // Endstatistik berechnen
+    // Рассчитать итоговую статистику
     const totalQuestions = quizQuestions.length;
     const correctCount = gameState.score;
     const incorrectCount = totalQuestions - correctCount;
     const percentage = Math.round((correctCount / totalQuestions) * 100);
     
-    // Ergebnis-UI aktualisieren
+    // Обновить UI результатов
     correctCountDisplay.textContent = correctCount;
     incorrectCountDisplay.textContent = incorrectCount;
     percentageDisplay.textContent = percentage;
     circleScoreText.textContent = correctCount;
     
-    // Ergebnis-Kreis animieren
+    // Анимировать круг с результатом
     const circleCircumference = 2 * Math.PI * 54; // r = 54
     const offset = circleCircumference - (correctCount / totalQuestions) * circleCircumference;
     scoreCircle.style.strokeDashoffset = offset;
     
-    // Endzustand der Fortschrittsleiste setzen
+    // Установить конечное состояние прогресс-бара
     progressFill.style.width = '100%';
     
-    // Passende Nachricht basierend auf Ergebnis anzeigen
+    // Показать соответствующее сообщение в зависимости от результата
     let message = '';
     if (percentage >= 90) {
-        message = "Ausgezeichnet! Du kennst die Vokabeln zum Thema 'Essen' perfekt!";
+        message = "Отлично! Вы отлично знаете немецкие слова по теме 'Еда'!";
     } else if (percentage >= 70) {
-        message = "Gute Arbeit! Du kennst die Wörter zum Thema Essen gut.";
+        message = "Хорошая работа! Вы хорошо знаете слова о еде на немецком.";
     } else if (percentage >= 50) {
-        message = "Nicht schlecht! Übe weiter, um dein Ergebnis zu verbessern.";
+        message = "Неплохо! Продолжайте практиковаться, чтобы улучшить результат.";
     } else {
-        message = "Lerne weiter! Wiederhole die Vokabeln und versuche es noch einmal.";
+        message = "Продолжайте учить слова! Повторите лексику и попробуйте ещё раз.";
     }
     
     resultsMessage.textContent = message;
 }
 
-// Test neu starten
+// Начать тест заново
 function restartQuiz() {
     startQuiz();
 }
 
-// Vokabelbildschirm anzeigen
+// Показать экран с лексикой
 function showVocabularyScreen() {
     showScreen('vocabulary');
 }
 
-// Test-UI-Elemente aktualisieren
+// Обновить элементы UI теста
 function updateQuizUI() {
-    // Derzeit nichts benötigt
+    // Пока ничего не нужно
 }
 
-// Spiel initialisieren, wenn DOM geladen ist
+// Инициализировать игру при загрузке DOM
 document.addEventListener('DOMContentLoaded', initGame);
